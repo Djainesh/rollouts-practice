@@ -5,18 +5,18 @@ metadata:
 spec:
   replicas: 4
   selector:
-    matchLabels: { app: demo-rolling }
+    matchLabels: {app: demo-rolling}
   strategy:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 1
-      maxUnavailable: 0
+      maxUnavailable: 1
   template:
     metadata:
-      labels: { app: demo-rolling }
+      labels: {app: demo-rolling}
     spec:
       containers:
-        - name: demo
-          image: argoproj/rollouts-demo:yellow
-          ports:
-            - containerPort: 8080
+      - name: demo
+        image: argoproj/rollouts-demo:blue
+        ports:
+        - containerPort: 8080
