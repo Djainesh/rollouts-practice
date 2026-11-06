@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: demo
-          image: argoproj/rollouts-demo:green
+          image: argoproj/rollouts-demo:yellow
           ports:
             - containerPort: 8080
   strategy:
