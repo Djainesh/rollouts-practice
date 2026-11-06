@@ -5,16 +5,16 @@ metadata:
 spec:
   replicas: 3
   selector:
-    matchLabels: {app: demo-bluegreen}
+    matchLabels: { app: demo-bluegreen }
   template:
     metadata:
-      labels: {app: demo-bluegreen}
+      labels: { app: demo-bluegreen }
     spec:
       containers:
-      - name: demo
-        image: argoproj/rollouts-demo:blue
-        ports:
-        - containerPort: 8080
+        - name: demo
+          image: argoproj/rollouts-demo:green
+          ports:
+            - containerPort: 8080
   strategy:
     blueGreen:
       activeService: demo-active
